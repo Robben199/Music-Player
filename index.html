@@ -1,0 +1,180 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#101b20">
+
+    <title>Neural Travel Music Player</title>
+
+    <link rel="stylesheet" href="/storage/emulated/0/EATEOT/Music Player/style.css">
+</head>
+<body>
+
+    <main class="app">
+
+        <!-- HEADER -->
+        <header class="header">
+            <div class="logo">NT</div>
+
+            <div>
+                <p class="subtitle">NEURAL TRAVEL</p>
+                <h1>Music Player</h1>
+            </div>
+        </header>
+
+
+        <!-- NOW PLAYING -->
+        <section class="now-playing">
+
+            <div class="cover">
+                <span>NT</span>
+            </div>
+
+            <div class="track-info">
+                <p class="subtitle">NOW PLAYING</p>
+
+                <h2 id="nowTitle">
+                    Belum ada musik
+                </h2>
+
+                <p id="nowArtist">
+                    Impor audio untuk memulai.
+                </p>
+            </div>
+
+        </section>
+
+
+        <!-- AUDIO PLAYER -->
+        <section class="player">
+
+            <audio id="audio"></audio>
+
+            <div class="timeline">
+
+                <span id="currentTime">0:00</span>
+
+                <input
+                    type="range"
+                    id="seekBar"
+                    min="0"
+                    max="100"
+                    value="0"
+                >
+
+                <span id="duration">0:00</span>
+
+            </div>
+
+
+            <div class="controls">
+
+                <button id="shuffleBtn">
+                    🔀
+                </button>
+
+                <button id="prevBtn">
+                    |◀
+                </button>
+
+                <button id="playBtn">
+                    ▶
+                </button>
+
+                <button id="nextBtn">
+                    ▶|
+                </button>
+
+                <button id="repeatBtn">
+                    🔁
+                </button>
+
+            </div>
+
+            <p id="status">
+                Perpustakaan musik siap.
+            </p>
+
+        </section>
+
+
+        <!-- PLAYLIST HEADER -->
+        <section class="playlist-header">
+
+            <div>
+                <p class="subtitle">YOUR LOCAL LIBRARY</p>
+                <h2>Playlist</h2>
+            </div>
+
+            <span id="trackCount">
+                0 lagu
+            </span>
+
+        </section>
+
+
+        <!-- IMPORT MUSIC -->
+        <section class="library-actions">
+
+            <label for="fileInput" class="import-btn">
+                ＋ Impor Musik
+            </label>
+
+            <input
+                type="file"
+                id="fileInput"
+                accept="audio/*"
+                multiple
+            >
+
+            <button id="clearBtn">
+                Hapus Semua
+            </button>
+
+        </section>
+
+
+        <p class="hint">
+            Kamu bisa memilih beberapa file audio sekaligus.
+        </p>
+
+
+        <!-- EMPTY PLAYLIST -->
+        <section id="emptyState" class="empty-state">
+
+            <div class="music-icon">♫</div>
+
+            <h3>Belum ada lagu</h3>
+
+            <p>
+                Impor file musik untuk mengisi playlist
+                Neural Travel milikmu.
+            </p>
+
+        </section>
+
+
+        <!-- PLAYLIST ITEMS -->
+        <ul id="playlist" class="playlist"></ul>
+
+
+        <!-- FOOTER -->
+        <footer>
+            <p>NEURAL TRAVEL / LOCAL AUDIO</p>
+            <p>INFO: </p>
+            <p>Developer: Robben</p>
+            <p>Copyright: ©2026 Robben</p>
+            <p>Version: 1.0</p>
+        </footer>
+
+    </main>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="/storage/emulated/0/EATEOT/Music Player/app.js"></script>
+
+</body>
+</html>

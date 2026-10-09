@@ -1,0 +1,589 @@
+
+/* =========================
+   NEURAL TRAVEL MUSIC PLAYER
+   STYLE.CSS - VERSION 0.1
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #0b1216;
+    --panel: #142126;
+    --panel-light: #1b2c32;
+    --border: #2c4249;
+
+    --text: #e8f1f2;
+    --muted: #8fa6ab;
+
+    --teal: #62d8c5;
+    --teal-dark: #1c827b;
+
+    --danger: #e58d8d;
+}
+
+
+/* BODY */
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            ellipse at top,
+            #1b343a 0%,
+            var(--bg) 48%
+        );
+
+    color: var(--text);
+
+    font-family:
+        system-ui,
+        -apple-system,
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
+}
+
+
+/* GENERAL BUTTONS */
+
+button {
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+}
+
+button:active {
+    transform: scale(0.96);
+}
+
+
+/* MAIN APP */
+
+.app {
+    width: 100%;
+    max-width: 720px;
+
+    margin: 0 auto;
+    padding: 20px 18px 30px;
+}
+
+
+/* HEADER */
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin-bottom: 22px;
+}
+
+.logo {
+    width: 46px;
+    height: 46px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 14px;
+    border: 1px solid #4b827f;
+
+    background:
+        linear-gradient(
+            135deg,
+            #254b50,
+            #101c21
+        );
+
+    color: var(--teal);
+
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+h1 {
+    margin: 0;
+    font-size: 22px;
+    line-height: 1.2;
+}
+
+
+/* SMALL SECTION LABELS */
+
+.subtitle {
+    margin: 0 0 4px;
+
+    color: var(--teal);
+
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+
+/* NOW PLAYING */
+
+.now-playing {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    padding: 16px;
+
+    border: 1px solid var(--border);
+    border-radius: 20px;
+
+    background: var(--panel);
+}
+
+
+/* ALBUM COVER */
+
+.cover {
+    position: relative;
+
+    flex: 0 0 76px;
+    height: 76px;
+
+    display: grid;
+    place-items: center;
+
+    overflow: hidden;
+
+    border-radius: 15px;
+    border: 1px solid #35585d;
+
+    background:
+        linear-gradient(
+            145deg,
+            #274d53,
+            #0c171c
+        );
+}
+
+.cover::before,
+.cover::after {
+    content: "";
+
+    position: absolute;
+
+    width: 90px;
+    height: 90px;
+
+    border: 1px solid
+        rgba(98, 216, 197, 0.3);
+
+    border-radius: 50%;
+}
+
+.cover::after {
+    width: 55px;
+    height: 55px;
+}
+
+.cover span {
+    z-index: 1;
+
+    color: var(--teal);
+
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+
+/* TRACK INFORMATION */
+
+.track-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.track-info h2 {
+    margin: 5px 0;
+
+    font-size: 17px;
+
+    overflow-wrap: anywhere;
+}
+
+#nowArtist {
+    margin: 0;
+
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+
+/* PLAYER PANEL */
+
+.player {
+    margin-top: 12px;
+    padding: 16px;
+
+    border: 1px solid var(--border);
+    border-radius: 20px;
+
+    background: rgba(20, 33, 38, 0.95);
+}
+
+
+/* TIMELINE */
+
+.timeline {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    color: var(--muted);
+    font-size: 11px;
+    font-variant-numeric: tabular-nums;
+}
+
+.timeline input {
+    flex: 1;
+    min-width: 0;
+
+    accent-color: var(--teal);
+}
+
+
+/* PLAYER CONTROLS */
+
+.controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+
+    margin-top: 12px;
+}
+
+.controls button {
+    width: 38px;
+    height: 38px;
+
+    display: grid;
+    place-items: center;
+
+    border: 0;
+    border-radius: 12px;
+
+    background: transparent;
+    color: var(--muted);
+}
+
+.controls button:hover {
+    background: var(--panel-light);
+    color: var(--text);
+}
+
+
+/* MAIN PLAY BUTTON */
+
+#playBtn {
+    width: 54px;
+    height: 54px;
+
+    border-radius: 50%;
+
+    background: var(--teal);
+    color: #06201f;
+
+    font-size: 20px;
+    font-weight: 900;
+}
+
+
+/* STATUS */
+
+#status {
+    min-height: 17px;
+
+    margin: 12px 0 0;
+
+    color: var(--muted);
+    font-size: 11px;
+    text-align: center;
+}
+
+
+/* PLAYLIST HEADER */
+
+.playlist-header {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+
+    margin: 25px 2px 12px;
+}
+
+.playlist-header h2 {
+    margin: 0;
+    font-size: 21px;
+}
+
+#trackCount {
+    padding: 5px 9px;
+
+    border: 1px solid var(--border);
+    border-radius: 99px;
+
+    color: var(--muted);
+    font-size: 11px;
+}
+
+
+/* IMPORT SECTION */
+
+.library-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+#fileInput {
+    display: none;
+}
+
+.import-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 42px;
+    padding: 0 16px;
+
+    border: 0;
+    border-radius: 13px;
+
+    background: var(--teal);
+    color: #06201f;
+
+    font-size: 13px;
+    font-weight: 800;
+
+    cursor: pointer;
+}
+
+.import-btn:active {
+    transform: scale(0.97);
+}
+
+#clearBtn {
+    padding: 10px 0;
+
+    border: 0;
+    background: transparent;
+
+    color: var(--danger);
+    font-size: 12px;
+}
+
+
+/* HINT TEXT */
+
+.hint {
+    margin: 9px 2px 14px;
+
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+
+/* EMPTY PLAYLIST */
+
+.empty-state {
+    padding: 25px 18px;
+
+    border: 1px solid var(--border);
+    border-radius: 20px;
+
+    background: var(--panel);
+
+    text-align: center;
+}
+
+.music-icon {
+    width: 44px;
+    height: 44px;
+
+    display: grid;
+    place-items: center;
+
+    margin: 0 auto 12px;
+
+    border-radius: 14px;
+
+    background: #20373b;
+    color: var(--teal);
+
+    font-size: 24px;
+}
+
+.empty-state h3 {
+    margin: 0 0 6px;
+    font-size: 15px;
+}
+
+.empty-state p {
+    max-width: 270px;
+
+    margin: 0 auto;
+
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+
+/* PLAYLIST */
+
+.playlist {
+    display: grid;
+    gap: 8px;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+
+/* EACH TRACK */
+
+.track-row {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+
+    padding: 11px;
+
+    border: 1px solid transparent;
+    border-radius: 15px;
+
+    background: #111d22;
+}
+
+.track-row.active {
+    border-color: #3c8c84;
+    background: #183034;
+}
+
+.track-number {
+    width: 28px;
+    flex: 0 0 28px;
+
+    color: var(--muted);
+    font-size: 11px;
+    text-align: center;
+}
+
+.track-play {
+    width: 32px;
+    height: 32px;
+    flex: 0 0 32px;
+
+    border: 1px solid var(--border);
+    border-radius: 10px;
+
+    background: var(--panel-light);
+    color: var(--teal);
+}
+
+.track-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.track-title {
+    overflow: hidden;
+
+    color: var(--text);
+
+    font-size: 13px;
+    font-weight: 650;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.track-size {
+    margin-top: 3px;
+
+    color: var(--muted);
+    font-size: 10px;
+}
+
+.delete-track {
+    width: 30px;
+    height: 30px;
+
+    border: 0;
+    border-radius: 9px;
+
+    background: transparent;
+    color: var(--muted);
+
+    font-size: 18px;
+}
+
+.delete-track:hover {
+    background: #42272a;
+    color: var(--danger);
+}
+
+
+/* FOOTER */
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+
+    margin: 25px 2px 0;
+
+    color: #587077;
+
+    font-size: 9px;
+    letter-spacing: 1px;
+}
+
+footer p {
+    margin: 0;
+}
+
+
+/* SMALL SCREEN ADJUSTMENTS */
+
+@media (max-width: 360px) {
+    .app {
+        padding: 16px 12px 24px;
+    }
+
+    .cover {
+        flex-basis: 62px;
+        height: 62px;
+    }
+
+    .controls {
+        gap: 1px;
+    }
+
+    .controls button {
+        width: 34px;
+    }
+
+    #playBtn {
+        width: 48px;
+        height: 48px;
+    }
+}
